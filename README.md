@@ -9,28 +9,64 @@ Downloads, cleans, and explores **NSW traffic volume data**, then aligns it with
 
 ---
 
+## ⚠️ Read This First: Execution Order & Final Output
+
+**The scripts must be run in order.** Each step depends on the previous one:
+
+```
+  fetch_traffic_data.py          download raw data from API
+         │
+         ▼
+  align_crash_data.py            attach crash features (requires manual crash Excel download)
+         │
+         ▼
+  read_data.py                   explore the final dataset
+```
+
+| Step | Script | What It Does | Input / Prerequisite | Output |
+|------|--------|--------------|----------------------|--------|
+| **1** | `fetch_traffic_data.py` | Downloads station metadata, hourly traffic, and yearly AADT from the NSW API. | API key (embedded) | `stations_sydney.csv`, `traffic_hourly_sydney_2019.csv`, `yearly_summary_sydney_2019.csv` |
+| **2** | `align_crash_data.py` | Aligns crash data to traffic data by time + space, appending 5 crash features. | Step 1 output + crash Excel (included in repo) | **`traffic_hourly_sydney_2019_aligned.csv`** ← **this is the file you use for modeling** |
+| **3** | `read_data.py` | CLI exploration tool — inspect the aligned dataset without writing pandas. | Step 2 output | (read-only queries) |
+
+### 🎯 The Final Dataset You Should Use
+
+```
+data/traffic_hourly_sydney_2019_aligned.csv
+```
+
+**2,528,481 rows × 19 columns** — hourly traffic volume with all spatial, temporal, holiday, and crash context features. This is the complete, modeling-ready file produced after running both `fetch_traffic_data.py` and `align_crash_data.py`.
+
+The raw file `traffic_hourly_sydney_2019.csv` (14 columns, no crash features) is an intermediate product — use it only if you explicitly don't want crash context.
+
+> 💡 **Preview without running**: A 10k-row sample is included in the repo at `data/traffic_hourly_sydney_2019_aligned_sample_10k.csv` so you can inspect the schema immediately after cloning.
+
+---
+
 ## Project Structure
 
 ```
 traffic_data/
-├── fetch_traffic_data.py          # ① Data download
-├── read_data.py                   # ② Data exploration & query tool
-├── align_crash_data.py            # ③ Crash–traffic alignment
+├── fetch_traffic_data.py          # ① Data download (run first)
+├── align_crash_data.py            # ② Crash–traffic alignment (run second)
+├── read_data.py                   # ③ Exploration & query tool (run third)
 ├── data/
-│   ├── stations_sydney.csv                    # Station metadata (299 stations)
-│   ├── traffic_hourly_sydney_2019.csv         # Raw hourly traffic (long format)
-│   ├── traffic_hourly_sydney_2019_aligned.csv # Hourly traffic with crash features
-│   ├── yearly_summary_sydney_2019.csv         # Annual summary statistics (AADT)
-│   ├── nsw_road_crash_data_2019-2023_crash.xlsx  # Raw crash data (manual download)
-│   └── crash_alignment_stats.csv              # Crash feature alignment summary
+│   ├── stations_sydney.csv                         # Station metadata (299 stations) ✓ in repo
+│   ├── traffic_hourly_sydney_2019.csv              # Intermediate: raw hourly traffic (14 cols) — generated
+│   ├── traffic_hourly_sydney_2019_aligned.csv      # ★ FINAL: traffic + crash features (19 cols) — generated
+│   ├── traffic_hourly_sydney_2019_aligned_sample_10k.csv  # Sample (10k rows) for schema preview ✓ in repo
+│   ├── yearly_summary_sydney_2019.csv              # Annual summary statistics (AADT) ✓ in repo
+│   ├── nsw_road_crash_data_2019-2023_crash.xlsx    # Raw crash data source ✓ in repo
+│   └── crash_alignment_stats.csv                   # Crash feature alignment summary ✓ in repo
 └── README.md
 ```
+> ✓ in repo = committed to GitHub. "generated" = produced by running the scripts; too large for GitHub.
 
 ---
 
 ## Python Scripts
 
-### ① `fetch_traffic_data.py` — Data Download
+### ① `fetch_traffic_data.py` — Data Download (Run First)
 
 **Purpose**: Downloads three categories of Sydney 2019 data via the NSW Traffic Volume API, applies column curation, and saves as CSV.
 
@@ -50,9 +86,39 @@ python fetch_traffic_data.py
 
 ---
 
-### ② `read_data.py` — Data Exploration Tool
+### ② `align_crash_data.py` — Crash Data Alignment (Run Second)
 
-**Purpose**: Provides command-line interactive data queries — no need to write pandas code for quick data inspection.
+**Purpose**: Aligns NSW road crash data with hourly traffic data by **time + space**, generating 5 crash-context feature columns. Produces the final modeling-ready file `traffic_hourly_sydney_2019_aligned.csv`.
+
+**Prerequisite**: The crash Excel file `nsw_road_crash_data_2019-2023_crash.xlsx` is already included in this repository. If it's missing for any reason, download it from the [NSW Open Data Portal](https://opendata.transport.nsw.gov.au) and place it in the `data/` directory.
+
+**Why can't we align on exact dates?**
+The crash dataset only provides **month + day of week + 2-hour window** — the exact calendar date is withheld for privacy protection. Therefore the alignment operates at a **statistical density** level: all dates sharing the same (station, month, day_of_week, hour) slot receive the same aggregate crash count.
+
+**Pipeline**:
+
+1. **Load crash data** → Reads the crash Excel file, filters to 2019 (~20,355 records), maps month/weekday names to integers, expands 2-hour windows into individual hours. Computes severity scores (Fatal=5, Injury=2, Towaway=1) and total injuries.
+2. **Spatial join** → For each crash, computes Haversine distance to all 299 stations. Keeps station–crash pairs within 5 km.
+3. **Temporal mapping** → Maps each crash to `(station_key, month, day_of_week, hour)` tuples.
+4. **Aggregation** → Groups by `(station_key, month, day_of_week, hour)` and computes 5 crash features:
+   - `crash_count` — number of matching crashes
+   - `crash_severity_sum` — sum of severity scores
+   - `crash_injury_sum` — total persons injured or killed
+   - `crash_fatal_count` — number of fatal crashes
+   - `crash_wet_count` — number of wet-surface crashes
+5. **Left join** → Left-joins the aggregated features onto the raw traffic table. Rows with no matching crash are zero-filled. Outputs `traffic_hourly_sydney_2019_aligned.csv` — **this is the final file used for modeling.**
+
+**Usage**:
+
+```bash
+python align_crash_data.py
+```
+
+---
+
+### ③ `read_data.py` — Data Exploration Tool (Run Third / Optional)
+
+**Purpose**: Provides command-line interactive data queries — no need to write pandas code for quick data inspection. Reads from `traffic_hourly_sydney_2019_aligned.csv` when crash features are requested.
 
 **Commands**:
 
@@ -73,36 +139,6 @@ python fetch_traffic_data.py
 - Quickly inspect a station's traffic patterns (`station` gives hourly mean/median/std + holiday comparison)
 - Understand volume patterns by road class (`peak` gives a mean-volume matrix: AM peak / PM peak / off-peak × road hierarchy)
 - Assess crash feature distributions (`crash` outputs nonzero ratios, distributions by hour and road class)
-
----
-
-### ③ `align_crash_data.py` — Crash Data Alignment
-
-**Purpose**: Aligns NSW road crash data with hourly traffic data by **time + space**, generating 5 crash-context feature columns.
-
-**Why can't we align on exact dates?**
-The crash dataset only provides **month + day of week + 2-hour window** — the exact calendar date is withheld for privacy protection. Therefore the alignment operates at a **statistical density** level: all dates sharing the same (station, month, day_of_week, hour) slot receive the same aggregate crash count.
-
-**Pipeline**:
-
-1. **Load crash data** → Reads `nsw_road_crash_data_2019-2023_crash.xlsx`, filters to 2019 (~20,355 records), maps month/weekday names to integers, expands 2-hour windows into individual hours. Computes severity scores (Fatal=5, Injury=2, Towaway=1) and total injuries.
-2. **Spatial join** → For each crash, computes Haversine distance to all 299 stations. Keeps station–crash pairs within 5 km.
-3. **Temporal mapping** → Maps each crash to `(station_key, month, day_of_week, hour)` tuples.
-4. **Aggregation** → Groups by `(station_key, month, day_of_week, hour)` and computes 5 crash features:
-   - `crash_count` — number of matching crashes
-   - `crash_severity_sum` — sum of severity scores
-   - `crash_injury_sum` — total persons injured or killed
-   - `crash_fatal_count` — number of fatal crashes
-   - `crash_wet_count` — number of wet-surface crashes
-5. **Left join** → Left-joins the aggregated features onto the raw traffic table. Rows with no matching crash are zero-filled. Outputs `traffic_hourly_sydney_2019_aligned.csv`.
-
-**Usage**:
-
-```bash
-python align_crash_data.py
-```
-
-> Requires `fetch_traffic_data.py` to have been run first, and the crash Excel file placed manually in the `data/` directory.
 
 ---
 
@@ -205,8 +241,8 @@ python align_crash_data.py
 | `crash_wet_count` | int | Number of crashes that occurred on wet road surface | 0.065 | 4 | 5.85% |
 
 **Which file to use**:
-- If crash features are not needed → use the raw file `traffic_hourly_sydney_2019.csv` (14 columns)
-- If the model benefits from crash context → use the aligned file `traffic_hourly_sydney_2019_aligned.csv` (19 columns)
+- **For modeling / downstream tasks → use `traffic_hourly_sydney_2019_aligned.csv` (19 columns).** This is the final, complete dataset with all features.
+- Only use the raw `traffic_hourly_sydney_2019.csv` (14 columns) if you explicitly want to exclude crash context.
 
 ---
 
@@ -261,7 +297,7 @@ Quick distribution overview of the 5 crash features without loading the full tra
 
 ### 📄 `nsw_road_crash_data_2019-2023_crash.xlsx` — Raw Crash Data
 
-NSW Government road crash dataset (2019–2023). Must be downloaded manually from the [NSW Open Data Portal](https://opendata.transport.nsw.gov.au). Each record includes crash time, location, severity, casualties, weather conditions, surface conditions, speed limit, and more.
+NSW Government road crash dataset (2019–2023). **Included in this repository** (~23 MB). If missing, download from the [NSW Open Data Portal](https://opendata.transport.nsw.gov.au). Each record includes crash time, location, severity, casualties, weather conditions, surface conditions, speed limit, and more.
 
 ---
 
