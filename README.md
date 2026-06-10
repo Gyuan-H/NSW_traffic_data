@@ -2,10 +2,10 @@
 
 Downloads, cleans, and explores **NSW traffic volume data**, then aligns it with **road crash data** to produce a complete feature set for machine learning models.
 
-- **Source**: [NSW Traffic Volume Counts API](https://opendata.transport.nsw.gov.au)
+- **Source**: [NSW Traffic Volume Counts API](https://opendata.transport.nsw.gov.au/data/dataset/nsw-roads-traffic-volume-counts-api)
 - **Region**: Sydney metropolitan area
 - **Year**: 2019
-- **Crash data**: [NSW Road Crash Data 2019-2023](https://opendata.transport.nsw.gov.au)
+- **Crash data**: [NSW Road Crash Data 2019-2023](https://opendata.transport.nsw.gov.au/data/dataset/nsw-crash-data)
 
 ---
 
@@ -17,7 +17,7 @@ Downloads, cleans, and explores **NSW traffic volume data**, then aligns it with
   fetch_traffic_data.py          download raw data from API
          │
          ▼
-  align_crash_data.py            attach crash features (requires manual crash Excel download)
+  align_crash_data.py            attach crash features (requires "nsw_road_crash_data_2019-2023_crash.csv" download)
          │
          ▼
   read_data.py                   explore the final dataset
