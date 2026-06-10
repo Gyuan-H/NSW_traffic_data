@@ -1,0 +1,10 @@
+# Large data files (>100MB — exceed GitHub file size limit)
+data/traffic_hourly_sydney_2019.csv
+data/traffic_hourly_sydney_2019_aligned.csv
+
+# Raw crash data (external download)
+data/nsw_road_crash_data_2019-2023_crash.xlsx
+
+# Python artifacts
+__pycache__/
+*.pyc

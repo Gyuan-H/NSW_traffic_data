@@ -1,0 +1,300 @@
+station_key,name,full_name,road_functional_hierarchy,lga,wgs84_latitude,wgs84_longitude,vehicle_classifier,device_type
+55304,Sydney Harbour Tunnel,"Sydney Harbour Tunnel, North of Cahill Expressway",Primary Road,Sydney,-33.860836,151.213791,0,Trafficorder Loop Counter
+55306,Western Distributor,"Western Distributor, West of Sussex Street",Motorway,Sydney,-33.86618,151.203201,0,Trafficorder Loop Counter
+55307,Cahill Expressway,"Cahill Expressway, East of Pitt Street",Motorway,Sydney,-33.86129,151.209854,0,Trafficorder Loop Counter
+55318,City Road,"City Road, East of Barff Road",Primary Road,Sydney,-33.888699,151.191421,0,Trafficorder Loop Counter
+55322,Cleveland Street,"Cleveland Street, West of Pitt Street",Arterial Road,Sydney,-33.889385,151.203934,0,Trafficorder Loop Counter
+55329,Enmore Road,"Enmore Road, East of Bailey Street",Arterial Road,Marrickville,-33.898201,151.177399,0,Trafficorder Loop Counter
+55348,Eastern Distributor,"Eastern Distributor, South of Flinders Street",Arterial Road,Sydney,-33.884388,151.217804,0,Trafficorder Dual Tube Classifier
+55355,Broadway,"Broadway, East of Derwent Lane",Primary Road,Sydney,-33.884663,151.192276,0,Trafficorder Dual Tube Classifier
+55357,Lee Street,"Lee Street, North of Little Regent Street",Arterial Road,Sydney,-33.884666,151.203171,0,Trafficorder Loop Counter
+55363,O'riordan Street,"O'riordan Street, North of Johnson Street",Arterial Road,Sydney,-33.907532,151.200974,0,Trafficorder Loop Counter
+55383,George Street,"George Street, South of Little Regent Street",Arterial Road,Sydney,-33.883865,151.202652,0,Trafficorder Loop Counter
+55385,Western Distributor,"Western Distributor, West of Allen Street",Motorway,Sydney,-33.8741,151.19487,0,Trafficorder Loop Counter
+55386,Pyrmont Street,"Pyrmont Street, North of Murray Street",Arterial Road,Sydney,-33.872505,151.196762,0,Trafficorder Loop Counter
+55388,Western Distributor,"Western Distributor, East of Harris Street",Motorway,Sydney,-33.874912,151.197159,0,Trafficorder Loop Counter
+55393,Cleveland Street,"Cleveland Street, East of Woodburn Street",Arterial Road,Sydney,-33.888908,151.200851,0,Trafficorder Dual Tube Classifier
+55394,Regent Street,"Regent Street, North of James Street",Arterial Road,Sydney,-33.889572,151.201599,0,Trafficorder Dual Tube Classifier
+55406,Crown Street,"Crown Street, South of William Street",Distributor Road,Sydney,-33.874722,151.216217,0,Trafficorder Loop Counter
+55411,King Street,"King Street, South of Newman Street",Arterial Road,Marrickville,-33.898334,151.178238,0,Trafficorder Loop Counter
+55423,Allen Street,"Allen Street, East of Bulwara Road",Local Road,Sydney,-33.873695,151.195328,0,Trafficorder Loop Counter
+55425,Pyrmont Street,"Pyrmont Street, North of Murray Street",Arterial Road,Sydney,-33.872505,151.196762,0,Trafficorder Loop Counter
+55430,Eastern Distributor,"Eastern Distributor, South of Anzac Parade",Arterial Road,Sydney,-33.887547,151.219452,0,Trafficorder Dual Tube Classifier
+55432,Cleveland Street,"Cleveland Street, West of Anzac Parade",Arterial Road,Sydney,-33.894791,151.220764,0,Trafficorder Loop Counter
+55715,Pacific Motorway,"Pacific Motorway, East of Pacific Highway",Motorway,Gosford,-33.530308,151.200348,0,Trafficorder Loop Counter
+55720,The Entrance Road,"The Entrance Road, South of Newcastle Street",Arterial Road,Gosford,-33.437263,151.363052,0,Trafficorder Loop Counter
+55747,Brisbane Water Drive,"Brisbane Water Drive, North of The Boulevarde",Arterial Road,Gosford,-33.482365,151.32428,0,Trafficorder Loop Counter
+56369,Hume Motorway,"Hume Motorway, South of Menangle Road",Motorway,Campbelltown,-34.115025,150.759109,0,Trafficorder Loop Counter
+56371,Princes Motorway,"Princes Motorway, West of Cawleys Road",Motorway,Wollongong,-34.161606,150.981125,0,Trafficorder Loop Counter
+56602,Cambridge Street,"Cambridge Street, North of Carre Avenue",Primary Road,Fairfield,-33.878181,150.924942,1,Tirtl
+56605,Princes Motorway,"Princes Motorway, South of Princes Highway",Motorway,Wollongong,-34.150352,150.990295,1,Excel Lpl
+56606,New South Head Road,"New South Head Road, East of Bayswater Road",Arterial Road,Woollahra,-33.876652,151.230606,1,Tirtl
+56613,Oxford Street,"Oxford Street, North of Syd Einfeld Drive",Arterial Road,Randwick,-33.890221,151.239777,0,Trafficorder Dual Tube Classifier
+56615,Syd Einfeld Drive,"Syd Einfeld Drive, East of Grosvenor Street",Arterial Road,Waverley,-33.89072,151.250137,0,Trafficorder Dual Tube Classifier
+56649,Southern Cross Drive,"Southern Cross Drive, South of Gardeners Road",Motorway,Botany Bay,-33.925007,151.214737,0,Trafficorder Loop Counter
+56658,Foreshore Road,"Foreshore Road, South of Fremlins Lane",Arterial Road,Botany Bay,-33.958763,151.203247,0,Trafficorder Loop Counter
+56662,Wentworth Avenue,"Wentworth Avenue, East of Southern Cross Drive",Arterial Road,Botany Bay,-33.936672,151.209625,0,Trafficorder Loop Counter
+56663,Gardeners Road,"Gardeners Road, East of Southern Cross Drive",Arterial Road,Botany Bay,-33.924473,151.214676,0,Trafficorder Loop Counter
+56678,Princes Highway,"Princes Highway, West of Yelverton Street",Primary Road,Marrickville,-33.917812,151.171143,1,Excel Pp
+56683,Canal Road,"Canal Road, North of Burrows Road",Arterial Road,Marrickville,-33.919224,151.177978,1,Excel Lpl
+56694,Parramatta Road,"Parramatta Road, South of Mathieson Street",Primary Road,Leichhardt,-33.887417,151.173325,0,Trafficorder Loop Counter
+56705,Western Distributor,"Western Distributor, West of Bowman Street",Motorway,Leichhardt,-33.869068,151.185349,0,Trafficorder Loop Counter
+56706,Parramatta Road,"Parramatta Road, West of Brown Street",Primary Road,Leichhardt,-33.889751,151.145081,0,Trafficorder Dual Tube Classifier
+56715,City-West Link Road,"City-West Link Road, West of Boomerang Street",Arterial Road,Ashfield,-33.869892,151.145019,0,Trafficorder Loop Counter
+56716,City West Link Road,"City West Link Road, West of The Crescent",Arterial Road,Leichhardt,-33.871185,151.172668,1,Excel Lpl
+56729,Military Road,"Military Road, West of Watson Street",Arterial Road,North Sydney,-33.829956,151.218063,0,Trafficorder Loop Counter
+56730,Strathallen Avenue,"Strathallen Avenue, North of The Boulevarde",Arterial Road,North Sydney,-33.817001,151.212357,0,Trafficorder Loop Counter
+56738,Military Road,"Military Road, West of Melrose Street",Sub-Arterial Road,Mosman,-33.825577,151.233261,1,Excel Lpl
+56740,Ourimbah Road,"Ourimbah Road, East of Bond Street",Arterial Road,Mosman,-33.822067,151.238358,0,Trafficorder Loop Counter
+56744,Princes Highway,"Princes Highway, East of Brodie Spark Drive",Primary Road,Rockdale,-33.929401,151.156433,0,Trafficorder Dual Tube Classifier
+56745,East Freeway,"East Freeway, West of General Holmes Drive",Motorway,Rockdale,-33.946026,151.172195,0,Trafficorder Loop Counter
+56748,Princes Highway,"Princes Highway, South of Taylor Avenue",Primary Road,Rockdale,-33.945034,151.141708,0,Trafficorder Dual Tube Classifier
+56753,Forest Road,"Forest Road, North of Bayview Street",Arterial Road,Rockdale,-33.947483,151.12796,0,Trafficorder Loop Counter
+56758,General Holmes Drive,"General Holmes Drive, South of Rowley Street",Arterial Road,Rockdale,-33.954906463623,151.158676147461,0,Trafficorder Loop Counter
+56762,Marsh Street,"Marsh Street, South of Rockwell Avenue",Local Road,Rockdale,-33.934475,151.15831,1,Excel Ll
+56776,King Georges Road,"King Georges Road, North of The Boulevarde",Arterial Road,Canterbury,-33.922554,151.068237,0,Trafficorder Dual Tube Classifier
+56778,Canterbury Road,"Canterbury Road, West of Sproule Street",Arterial Road,Canterbury,-33.928268,151.077286,0,Trafficorder Loop Counter
+56780,Punchbowl Road,"Punchbowl Road, East of Margaret Street",Arterial Road,Strathfield,-33.899914,151.088058,1,Excel Ll
+56781,King Georges Road,"King Georges Road, North of Roseland Avenue",Arterial Road,Canterbury,-33.934917,151.0737,0,Trafficorder Dual Tube Classifier
+56795,Canterbury Road,"Canterbury Road, West of Charles Street",Arterial Road,Canterbury,-33.913277,151.11734,0,Trafficorder Loop Counter
+56800,Bexley Road,"Bexley Road, North of South Western Motorway",Arterial Road,Canterbury,-33.935444,151.111282,0,Trafficorder Loop Counter
+56801,Liverpool Road,"Liverpool Road, East of Elizabeth Street",Primary Road,Ashfield,-33.889008,151.133102,0,Trafficorder Loop Counter
+56802,Parramatta Road,"Parramatta Road, West of St Davids Road",Primary Road,Ashfield,-33.885006,151.136261,0,Trafficorder Loop Counter
+56814,Parramatta Road,"Parramatta Road, West of Telopea Avenue",Primary Road,Strathfield,-33.85709,151.066177,0,Trafficorder Dual Tube Classifier
+56819,Western Motorway,"Western Motorway, East of Bedford Road",Motorway,Strathfield,-33.859497,151.076492,0,Trafficorder Loop Counter
+56820,Centenary Drive,"Centenary Drive, East of Richmond Road",Arterial Road,Strathfield,-33.86327,151.066605,1,Excel Ll
+56821,Centenary Drive,"Centenary Drive, North of Hume Highway",Arterial Road,Strathfield,-33.8840827941895,151.069564819336,0,Trafficorder Loop Counter
+56823,Liverpool Road,"Liverpool Road, East of Gould Street",Primary Road,Strathfield,-33.887241,151.073135,0,Trafficorder Dual Tube Classifier
+56827,Hume Highway,"Hume Highway, North of Waterloo Road",Primary Road,Bankstown,-33.889046,151.060608,0,Trafficorder Loop Counter
+56836,Western Motorway,"Western Motorway, North of Parramatta Road",Motorway,Auburn,-33.856541,151.068039,0,Trafficorder Loop Counter
+56837,Western Motorway,"Western Motorway, South of Homebush Bay Drive",Motorway,Strathfield,-33.85783,151.070923,0,Trafficorder Loop Counter
+56838,Homebush Bay Drive,"Homebush Bay Drive, East of Oulton Avenue",Arterial Road,Canada Bay,-33.836475,151.085938,0,Trafficorder Loop Counter
+56841,Concord Road,"Concord Road, North of Llewellyn Street",Arterial Road,Canada Bay,-33.824696,151.093216,1,Tirtl
+56844,Victoria Road,"Victoria Road, South of Burns Bay Road",Arterial Road,Canada Bay,-33.842159,151.147903,0,Trafficorder Loop Counter
+56845,Parramatta Road,"Parramatta Road, West of Cheltenham Road",Primary Road,Canada Bay,-33.869789,151.112778,0,Trafficorder Dual Tube Classifier
+56846,Victoria Road,"Victoria Road, North of Byrnes Street",Motorway,Leichhardt,-33.860798,151.164291,1,Excel Lpl
+56855,Victoria Road,"Victoria Road, East of Mortimer Lewis Drive",Arterial Road,Hunters Hill,-33.839256,151.14035,0,Trafficorder Dual Tube Classifier
+56856,Burns Bay Road,"Burns Bay Road, North of Martin Street",Arterial Road,Lane Cove,-33.829678,151.146133,0,Trafficorder Loop Counter
+56857,Epping Road,"Epping Road, East of Lane Cove Tunnel",Arterial Road,Lane Cove,-33.812298,151.170197,0,Trafficorder Loop Counter
+56860,Epping Road,"Epping Road, West of Elizabeth Parade",Arterial Road,Lane Cove,-33.810368,151.16188,0,Trafficorder Loop Counter
+56861,Burns Bay Road,"Burns Bay Road, North of Linley Lane",Arterial Road,Lane Cove,-33.821175,151.149902,1,Excel Lpl
+56863,River Road,"River Road, East of Fleming Street",Arterial Road,Lane Cove,-33.825085,151.178818,0,Trafficorder Loop Counter
+56865,Mowbray Road,"Mowbray Road, North of Walkers Drive",Arterial Road,Willoughby,-33.80106,151.146164,0,Trafficorder Loop Counter
+56868,Pacific Highway,"Pacific Highway, South of Boundary Street",Primary Road,Willoughby,-33.787891,151.179306,0,Trafficorder Dual Tube Classifier
+56869,Pacific Highway,"Pacific Highway, South of Mowbray Road",Primary Road,Lane Cove,-33.806141,151.17952,1,Excel Lpl
+56872,Eastern Valley Way,"Eastern Valley Way, South of Sunnyside Crescent",Arterial Road,Willoughby,-33.799751,151.210465,1,Excel Lpl
+56873,Penshurst Street,"Penshurst Street, South of Warrah Lane",Arterial Road,Willoughby,-33.788738,151.193848,1,Excel Lpl
+56881,Willoughby Road,"Willoughby Road, South of Small Street",Arterial Road,Willoughby,-33.811386,151.199509,0,Trafficorder Loop Counter
+56885,Spit Road,"Spit Road, South of Manly Road",Arterial Road,Mosman,-33.803474,151.246109,1,Excel Lpl
+56888,Condamine Street,"Condamine Street, South of Sloane Crescent",Arterial Road,Warringah,-33.778187,151.267136,1,Excel Ll
+56891,Burnt Bridge Creek Deviation,"Burnt Bridge Creek Deviation, East of Brook Road",Arterial Road,Manly,-33.793015,151.253708,1,Excel Lpl
+56892,Wakehurst Parkway,"Wakehurst Parkway, South of Judith Street",Arterial Road,Manly,-33.781223,151.237793,1,Excel Lpl
+56895,Princes Highway,"Princes Highway, South of Townson Street",Primary Road,Kogarah,-33.997036,151.116333,0,Trafficorder Loop Counter
+56896,Taren Point Road,"Taren Point Road, South of Old Taren Point Road",Arterial Road,Sutherland,-34.011719,151.126007,0,Trafficorder Loop Counter
+56908,River Road,"River Road, South of Menai Road",Arterial Road,Sutherland,-34.019458770752,151.049346923828,0,Trafficorder Dual Tube Classifier
+56912,Princes Highway,"Princes Highway, West of Amaroo Street",Primary Road,Sutherland,-34.022137,151.089767,0,Trafficorder Dual Tube Classifier
+56914,Princes Highway,"Princes Highway, East of Loftus Avenue",Primary Road,Sutherland,-34.054104,151.046188,0,Trafficorder Loop Counter
+56916,Princes Highway,"Princes Highway, North of Yanagang Street",Primary Road,Sutherland,-34.132504,150.993759,0,Trafficorder Loop Counter
+56918,Heathcote Road,"Heathcote Road, West of Beethoven Street",Arterial Road,Sutherland,-34.072643,151.000855,1,Excel Lpl
+56925,Princes Highway,"Princes Highway, East of Carwar Lane",Primary Road,Kogarah,-33.981586,151.118088,0,Trafficorder Loop Counter
+56927,King Georges Road,"King Georges Road, North of Cooleen Street",Arterial Road,Kogarah,-33.984394,151.109436,1,Excel Lpl
+56949,Stoney Creek Road,"Stoney Creek Road, West of Illawarra Parade",Arterial Road,Hurstville,-33.951763,151.088257,0,Trafficorder Loop Counter
+56950,Alfords Point Road,"Alfords Point Road, East of Snow Gum Place",Arterial Road,Bankstown,-33.977142,151.030533,1,Excel Ll
+56951,South Western Motorway,"South Western Motorway, South of Ely Street",Motorway,Bankstown,-33.940006,151.012375,0,Trafficorder Loop Counter
+56959,Henry Lawson Drive,"Henry Lawson Drive, East of Wainwright Avenue",Arterial Road,Bankstown,-33.963131,151.04187,0,Trafficorder Loop Counter
+56965,Joseph Street,"Joseph Street, South of Lewis Street",Arterial Road,Auburn,-33.8876495361328,151.039489746094,0,Trafficorder Dual Tube Classifier
+56973,Fairford Road,"Fairford Road, South of Aster Avenue",Arterial Road,Bankstown,-33.926025,151.038132,0,Trafficorder Dual Tube Classifier
+56974,Fairford Road,"Fairford Road, North of South Western Motorway",Arterial Road,Bankstown,-33.939327,151.035797,0,Trafficorder Dual Tube Classifier
+56975,Hume Highway,"Hume Highway, East of Stacey Street",Primary Road,Bankstown,-33.9051513671875,151.041351318359,0,Trafficorder Loop Counter
+56976,Canterbury Road,"Canterbury Road, West of Stacey Street",Arterial Road,Bankstown,-33.933296,151.039734,0,Trafficorder Loop Counter
+56980,Davies Road,"Davies Road, North of Alma Road",Arterial Road,Bankstown,-33.961929,151.037201,0,Trafficorder Loop Counter
+56981,Newbridge Road,"Newbridge Road, West of Henry Lawson Drive",Arterial Road,Bankstown,-33.9292488098145,150.979049682617,0,Trafficorder Loop Counter
+56982,Hume Highway,"Hume Highway, East of Woodville Road",Primary Road,Bankstown,-33.8899269104004,150.973999023438,0,Trafficorder Dual Tube Classifier
+56984,Canterbury Road,"Canterbury Road, East of Milperra Road",Arterial Road,Bankstown,-33.938198,151.019394,0,Trafficorder Dual Tube Classifier
+56989,Henry Lawson Drive,"Henry Lawson Drive, South of Milperra Road",Arterial Road,Bankstown,-33.930389,150.979797,0,Trafficorder Loop Counter
+57000,Hume Highway,"Hume Highway, East of Knight Street",Primary Road,Fairfield,-33.8911323547363,150.965896606445,0,Trafficorder Loop Counter
+57005,Parramatta Road,"Parramatta Road, West of Junction Street",Primary Road,Auburn,-33.83889,151.029022,1,Tirtl
+57008,Western Motorway,"Western Motorway, East of Mons Street",Motorway,Auburn,-33.852379,151.057754,1,Tirtl
+57011,Parramatta Road,"Parramatta Road, West of Marsh Street",Primary Road,Parramatta,-33.832489,151.016388,0,Trafficorder Loop Counter
+57012,Parramatta Road,"Parramatta Road, East of Harbord Street",Primary Road,Auburn,-33.835732,151.023056,0,Trafficorder Loop Counter
+57017,Parramatta Road,"Parramatta Road, North of Marsh Street",Primary Road,Parramatta,-33.832642,151.016739,1,Tirtl
+57019,James Ruse Drive,"James Ruse Drive, South of Thomas Street",Arterial Road,Parramatta,-33.814327,151.022492,0,Trafficorder Dual Tube Classifier
+57025,Silverwater Road,"Silverwater Road, West of Allambie Street",Arterial Road,Parramatta,-33.823917,151.051331,0,Trafficorder Loop Counter
+57034,Windsor Road,"Windsor Road, South of Lombard Street",Arterial Road,Parramatta,-33.788662,150.995102,0,Trafficorder Loop Counter
+57041,Briens Road,"Briens Road, West of Kleins Road",Distributor Road,Parramatta,-33.793552,150.993912,0,Trafficorder Loop Counter
+57042,Victoria Road,"Victoria Road, West of Bridge Street",Arterial Road,Parramatta,-33.809143,151.025696,0,Trafficorder Loop Counter
+57047,Marsden Road,"Marsden Road, West of Raimonde Road",Arterial Road,Parramatta,-33.78928,151.062759,1,Excel Lpl
+57048,Marsden Road,"Marsden Road, West of Farnell Street",Arterial Road,Parramatta,-33.802933,151.066223,1,Excel Lpl
+57049,Silverwater Road,"Silverwater Road, East of Batten Crescent",Arterial Road,Parramatta,-33.807297,151.053345,1,Excel Lpl
+57050,Victoria Road,"Victoria Road, West of Myrtle Street",Local Road,Parramatta,-33.812046,151.039719,1,Excel Lpl
+57051,Briens Road,"Briens Road, East of Old Windsor Road",Distributor Road,Parramatta,-33.796436,150.987595,1,Tirtl
+57052,Hart Drive,"Hart Drive, East of Mahony Road",Primary Road,Parramatta,-33.797592,150.975433,1,Excel Lpl
+57053,Silverwater Road,"Silverwater Road, North of River Road",Arterial Road,Parramatta,-33.819763,151.05188,1,Tirtl
+57055,Pennant Hills Road,"Pennant Hills Road, East of Sutherland Road",Arterial Road,Parramatta,-33.795948,151.012634,0,Trafficorder Loop Counter
+57060,Church Street,"Church Street, North of Daking Street",Arterial Road,Parramatta,-33.794579,151.000626,0,Trafficorder Loop Counter
+57073,Lane Cove Road,"Lane Cove Road, North of Curzon Street",Arterial Road,Ryde,-33.809544,151.106827,0,Trafficorder Loop Counter
+57078,Victoria Road,"Victoria Road, West of Belmore Lane",Arterial Road,Ryde,-33.815586,151.101623,0,Trafficorder Loop Counter
+57083,Rutledge Street,"Rutledge Street, West of West Parade",Arterial Road,Ryde,-33.79253,151.081924,0,Trafficorder Dual Tube Classifier
+57085,Victoria Road,"Victoria Road, West of Ryedale Road",Distributor Road,Ryde,-33.808025,151.089996,0,Trafficorder Loop Counter
+57094,Epping Road,"Epping Road, North of Yarwood Street",Arterial Road,Ryde,-33.774441,151.103638,1,Excel Lpl
+57095,Lane Cove Road,"Lane Cove Road, South of Lavarack Street",Arterial Road,Ryde,-33.80019,151.114365,1,Excel Lpl
+57096,Victoria Road,"Victoria Road, East of Belmore Street",Arterial Road,Ryde,-33.81551,151.101105,1,Tirtl
+57097,Lane Cove Road,"Lane Cove Road, South of Ryde Road",Arterial Road,Ku-Ring-Gai,-33.775299,151.135406,0,Trafficorder Loop Counter
+57101,Hills Motorway,"Hills Motorway, East of Rivett Road",Motorway,Ryde,-33.798344,151.13913,0,Trafficorder Loop Counter
+57102,Epping Road,"Epping Road, South of Rivett Road",Arterial Road,Ryde,-33.798531,151.138992,0,Trafficorder Loop Counter
+57103,Mona Vale Road,"Mona Vale Road, North of Woodlands Avenue",Arterial Road,Ku-Ring-Gai,-33.742413,151.150818,0,Trafficorder Loop Counter
+57104,Pacific Highway,"Pacific Highway, East of Blytheswood Avenue",Primary Road,Ku-Ring-Gai,-33.729225,151.122208,1,Tirtl
+57105,Pacific Highway,"Pacific Highway, North of Mcintyre Street",Primary Road,Ku-Ring-Gai,-33.75317,151.151077,1,Tirtl
+57106,Ryde Road,"Ryde Road, South of Lofberg Road",Arterial Road,Ku-Ring-Gai,-33.763687,151.136978,1,Excel Lpl
+57108,Pacific Highway,"Pacific Highway, South of Telegraph Road",Primary Road,Ku-Ring-Gai,-33.742207,151.139358,0,Trafficorder Dual Tube Classifier
+57110,Mona Vale Road,"Mona Vale Road, West of Garrick Road",Arterial Road,Ku-Ring-Gai,-33.725666,151.168045,1,Excel Lpl
+57113,Eastern Arterial Road,"Eastern Arterial Road, South of Nicholson Avenue",Arterial Road,Ku-Ring-Gai,-33.75,151.173416137695,0,Trafficorder Loop Counter
+57118,Pacific Highway,"Pacific Highway, North of Bruce Avenue",Primary Road,Ku-Ring-Gai,-33.761337,151.154983,0,Trafficorder Dual Tube Classifier
+57127,Boundary Street,"Boundary Street, East of Ferncourt Avenue",Arterial Road,Willoughby,-33.784893,151.187454,0,Trafficorder Loop Counter
+57128,Pacific Highway,"Pacific Highway, West of Lucinda Avenue",Primary Road,Ku-Ring-Gai,-33.718727,151.110672,0,Trafficorder Loop Counter
+57133,Pittwater Road,"Pittwater Road, North of Waterloo Street",Arterial Road,Warringah,-33.711651,151.296783,0,Trafficorder Loop Counter
+57134,Pittwater Road,"Pittwater Road, North of Nareen Parade",Arterial Road,Pittwater,-33.706745,151.297028,0,Trafficorder Dual Tube Classifier
+57135,Pittwater Road,"Pittwater Road, North of Lismore Avenue",Arterial Road,Warringah,-33.747414,151.290802,0,Trafficorder Dual Tube Classifier
+57136,Warringah Road,"Warringah Road, East of Daines Parade",Local Road,Warringah,-33.753216,151.257523,0,Trafficorder Dual Tube Classifier
+57138,Warringah Road,"Warringah Road, West of Melwood Avenue",Arterial Road,Warringah,-33.759975,151.211227,0,Trafficorder Loop Counter
+57140,Pittwater Road,"Pittwater Road, North of Jenkins Street",Arterial Road,Warringah,-33.729507,151.30011,1,Tirtl
+57141,Warringah Road,"Warringah Road, East of Daines Parade",Local Road,Warringah,-33.753262,151.257889,1,Excel Lpl
+57143,Wakehurst Parkway,"Wakehurst Parkway, North of Dreadnought Road",Arterial Road,Warringah,-33.737915,151.244888,1,Excel Lpl
+57155,Mona Vale Road,"Mona Vale Road, West of Forest Way",Arterial Road,Warringah,-33.701229,151.211594,0,Trafficorder Loop Counter
+57159,Mona Vale Road,"Mona Vale Road, East of Addison Road",Arterial Road,Warringah,-33.686592,151.256943,1,Tirtl
+57160,Forest Way,"Forest Way, East of Neridah Avenue",Arterial Road,Warringah,-33.725773,151.219788,1,Excel Lpl
+57168,Barrenjoey Road,"Barrenjoey Road, East of Pittwater Road",Arterial Road,Pittwater,-33.677433,151.304688,0,Trafficorder Loop Counter
+57173,Newbridge Road,"Newbridge Road, West of Haig Avenue",Arterial Road,Liverpool,-33.926929,150.928101,1,Excel Lpl
+57174,South Western Motorway,"South Western Motorway, East of Lakewood Crescent",Motorway,Liverpool,-33.939297,150.921341,0,Trafficorder Loop Counter
+57176,Hume Highway,"Hume Highway, North of South Western Motorway",Primary Road,Liverpool,-33.937553,150.913849,0,Trafficorder Loop Counter
+57178,Elizabeth Drive,"Elizabeth Drive, South of Reservoir Road",Arterial Road,Liverpool,-33.914284,150.907883,0,Trafficorder Dual Tube Classifier
+57182,Copeland Street,"Copeland Street, North of Campbell Street",Local Road,Liverpool,-33.916756,150.919952,0,Trafficorder Loop Counter
+57183,Orange Grove Road,"Orange Grove Road, West of Links Avenue",Primary Road,Liverpool,-33.904961,150.917831,0,Trafficorder Loop Counter
+57186,Hume Highway,"Hume Highway, North of Kendall Drive",Primary Road,Liverpool,-33.956684,150.891098,1,Excel Ll
+57203,Elizabeth Drive,"Elizabeth Drive, East of Airlie Crescent",Arterial Road,Liverpool,-33.88306,150.851425,0,Trafficorder Loop Counter
+57224,Elizabeth Drive,"Elizabeth Drive, North of Bonnyrigg Avenue",Arterial Road,Fairfield,-33.889923,150.883972,0,Trafficorder Loop Counter
+57234,Woodville Road,"Woodville Road, South of Allowrie Road",Arterial Road,Fairfield,-33.888622,150.97377,1,Excel Lpl
+57238,Cambridge Street,"Cambridge Street, South of New Cambridge Street",Primary Road,Fairfield,-33.874428,150.925674,0,Trafficorder Loop Counter
+57250,The Horsley Drive,"The Horsley Drive, North of Fairfield Street",Arterial Road,Fairfield,-33.870174,150.96106,0,Trafficorder Loop Counter
+57256,Warren Road,"Warren Road, East of Smithfield Road",Local Road,Fairfield,-33.850235,150.944809,0,Trafficorder Loop Counter
+57257,Fairfield Street,"Fairfield Street, East of Cockburn Crescent",Distributor Road,Fairfield,-33.869324,150.963486,1,Tirtl
+57258,Fairfield Street,"Fairfield Street, East of Cockburn Crescent",Distributor Road,Fairfield,-33.869339,150.96344,1,Excel Lpl
+57263,Great Western Highway,"Great Western Highway, East of Emert Street",Primary Road,Holroyd,-33.814598,150.965225,0,Trafficorder Loop Counter
+57264,Church Street,"Church Street, South of Meehan Street",Primary Road,Holroyd,-33.826282,151.004715,0,Trafficorder Loop Counter
+57267,Great Western Highway,"Great Western Highway, North of Rawson Road",Primary Road,Holroyd,-33.814941,150.966827,1,Excel Lpl
+57268,Great Western Highway,"Great Western Highway, East of Liverpool-Parramatta Transitway",Primary Road,Holroyd,-33.816696,150.976623,1,Tirtl
+57271,Freame Street,"Freame Street, South of Hart Drive",Primary Road,Holroyd,-33.806152,150.970047,0,Trafficorder Dual Tube Classifier
+57277,Gipps Road,"Gipps Road, South of Long Street",Distributor Road,Fairfield,-33.8419532775879,150.926940917969,0,Trafficorder Loop Counter
+57289,Old Windsor Road,"Old Windsor Road, West of Hammers Road",Primary Road,Parramatta,-33.790771,150.978729,0,Trafficorder Loop Counter
+57290,Prospect Highway,"Prospect Highway, North of The Hills Crescent",Arterial Road,Blacktown,-33.774277,150.935242,0,Trafficorder Loop Counter
+57293,Sunnyholt Road,"Sunnyholt Road, South of Devitt Street",Arterial Road,Blacktown,-33.769943,150.912094,0,Trafficorder Dual Tube Classifier
+57294,Lancaster Street,"Lancaster Street, North of Bimbil Street",Arterial Road,Blacktown,-33.7658920288086,150.892974853516,0,Trafficorder Loop Counter
+57297,Balmoral Street,"Balmoral Street, North of Kildare Road",Distributor Road,Blacktown,-33.767948,150.904663,0,Trafficorder Dual Tube Classifier
+57298,Great Western Highway,"Great Western Highway, East of Rudders Lane",Primary Road,Blacktown,-33.791676,150.867493,0,Trafficorder Loop Counter
+57300,Great Western Highway,"Great Western Highway, West of Toongabbie Road",Primary Road,Holroyd,-33.806572,150.932541,0,Trafficorder Dual Tube Classifier
+57305,Eastern Road,"Eastern Road, East of Westlink M7",Distributor Road,Blacktown,-33.771648,150.857834,0,Trafficorder Loop Counter
+57314,Blacktown Road,"Blacktown Road, South of Lancelot Street",Arterial Road,Blacktown,-33.791531,150.919113,0,Trafficorder Loop Counter
+57316,Knox Road,"Knox Road, South of Cross Street",Distributor Road,Blacktown,-33.763252,150.863083,1,Excel Lpl
+57318,Great Western Highway,"Great Western Highway, East of Hewitt Street",Primary Road,Penrith,-33.776749,150.803101,0,Trafficorder Dual Tube Classifier
+57322,Windsor Road,"Windsor Road, North of Merriville Road",Arterial Road,The Hills,-33.699543,150.928497,1,Excel Ll
+57324,Wallgrove Road,"Wallgrove Road, South of Roussell Road",Arterial Road,Blacktown,-33.82074,150.851837,0,Trafficorder Loop Counter
+57327,Summerland Crescent,"Summerland Crescent, South of Everingham Street",Local Road,Blacktown,-33.726101,150.844681,0,Trafficorder Loop Counter
+57328,Francis Road,"Francis Road, North of North Parade",Distributor Road,Blacktown,-33.7716369628906,150.836044311523,0,Trafficorder Loop Counter
+57333,Richmond Road,"Richmond Road, East of Symonds Road",Arterial Road,Blacktown,-33.741375,150.866013,0,Trafficorder Loop Counter
+57342,Carlisle Avenue,"Carlisle Avenue, North of Beames Avenue",Arterial Road,Blacktown,-33.769043,150.816498,0,Trafficorder Loop Counter
+57354,Power Street,"Power Street, East of Owen Street",Distributor Road,Blacktown,-33.754395,150.859238,0,Trafficorder Dual Tube Classifier
+57356,Old Windsor Road,"Old Windsor Road, South of Balmoral Road",Arterial Road,The Hills,-33.726486,150.940506,0,Trafficorder Loop Counter
+57357,Showground Road,"Showground Road, East of Victoria Avenue",Arterial Road,The Hills,-33.724926,150.977097,1,Tirtl
+57358,Cambridge Street,"Cambridge Street, North of Joseph Street",Primary Road,Fairfield,-33.888176,150.922974,1,Tirtl
+57359,Pennant Hills Road,"Pennant Hills Road, East of Beecroft Road",Primary Road,Hornsby,-33.740406,151.060989,1,Tirtl
+57360,Great Western Highway,"Great Western Highway, East of Reservoir Road",Primary Road,Blacktown,-33.798203,150.897141,1,Tirtl
+57361,City-West Link Road,"City-West Link Road, North of Timbrell Drive",Arterial Road,Ashfield,-33.870773,151.142013,1,Tirtl
+57362,James Ruse Drive,"James Ruse Drive, North of North Rocks Road",Primary Road,The Hills,-33.791458,151.001419,0,Trafficorder Loop Counter
+57365,Castle Hill Road,"Castle Hill Road, East of Old Northern Road",Arterial Road,Hornsby,-33.730938,151.017548,0,Trafficorder Loop Counter
+57367,Old Northern Road,"Old Northern Road, West of Ambleside Drive",Arterial Road,The Hills,-33.744923,150.996368,1,Excel Lpl
+57368,Windsor Road,"Windsor Road, North of Hambledon Avenue",Arterial Road,The Hills,-33.740467,150.984421,1,Tirtl
+57369,Castle Hill Road,"Castle Hill Road, West of Franklin Road",Arterial Road,Hornsby,-33.738117,151.033081,1,Excel Lpl
+57373,Windsor Road,"Windsor Road, North of Oakland Avenue",Arterial Road,The Hills,-33.76622,150.997086,0,Trafficorder Loop Counter
+57377,Renown Road,"Renown Road, West of Barclay Road",Distributor Road,The Hills,-33.765114,151.009125,0,Trafficorder Loop Counter
+57395,Old Northern Road,"Old Northern Road, South of Malabar Road",Arterial Road,Hornsby,-33.699642,151.01561,1,Excel Lpl
+57408,Pacific Highway,"Pacific Highway, North of Pennant Hills Road",Primary Road,Hornsby,-33.717724,151.108383,0,Trafficorder Loop Counter
+57413,Pennant Hills Road,"Pennant Hills Road, South of Copeland Road",Primary Road,The Hills,-33.755604,151.048203,0,Trafficorder Loop Counter
+57419,Epping Road,"Epping Road, West of Crimea Road",Arterial Road,Ryde,-33.770763,151.094559,0,Trafficorder Loop Counter
+57423,Junction Road,"Junction Road, East of Edgeworth David Avenue",Arterial Road,Hornsby,-33.708252,151.116745,0,Trafficorder Loop Counter
+57425,Pennant Hills Road,"Pennant Hills Road, West of The Crescent",Primary Road,Hornsby,-33.738918,151.072128,0,Trafficorder Loop Counter
+57426,Pennant Hills Road,"Pennant Hills Road, East of Loftus Road",Primary Road,Hornsby,-33.740452,151.059372,0,Trafficorder Loop Counter
+57429,Junction Road,"Junction Road, West of Pacific Motorway",Arterial Road,Hornsby,-33.708275,151.116898,0,Trafficorder Loop Counter
+57430,Pacific Highway,"Pacific Highway, South of Mills Avenue",Primary Road,Hornsby,-33.684055,151.110504,0,Trafficorder Loop Counter
+57434,Pennant Hills Road,"Pennant Hills Road, East of Frith Avenue",Primary Road,Hornsby,-33.720676,151.10527,0,Trafficorder Loop Counter
+57438,Pennant Hills Road,"Pennant Hills Road, East of Woodstock Road",Primary Road,The Hills,-33.769329,151.049728,0,Trafficorder Loop Counter
+57439,New Line Road,"New Line Road, South of Tennyson Close",Distributor Road,Hornsby,-33.723019,151.036606,1,Tirtl
+57440,Beecroft Road,"Beecroft Road, North of Old Beecroft Road",Arterial Road,Hornsby,-33.760658,151.07962,1,Excel Lpl
+57441,Pennant Hills Road,"Pennant Hills Road, West of Terra Street",Primary Road,Hornsby,-33.724735,151.086151,1,Excel Pp
+57443,Wongala Crescent,"Wongala Crescent, North of Sutherland Road",Distributor Road,Hornsby,-33.750919,151.065918,0,Trafficorder Loop Counter
+57453,Epping Road,"Epping Road, East of Bridge Street",Arterial Road,Parramatta,-33.773907,151.082626,0,Trafficorder Loop Counter
+57456,Pacific Highway,"Pacific Highway, North of Brooklyn Road",Primary Road,Hornsby,-33.541714,151.198547,0,Trafficorder Loop Counter
+57457,Pacific Highway,"Pacific Highway, North of Berowra Waters Road",Primary Road,Hornsby,-33.607269,151.160721,0,Trafficorder Loop Counter
+57458,Pacific Highway,"Pacific Highway, North of The Gully Road",Primary Road,Hornsby,-33.607098,151.161026,0,Trafficorder Loop Counter
+57462,Campbelltown Road,"Campbelltown Road, North of Blaxland Road",Arterial Road,Campbelltown,-34.050945,150.825409,1,Excel Lpl
+57476,Hume Motorway,"Hume Motorway, South of Brooks Road",Motorway,Campbelltown,-33.989937,150.8526,0,Trafficorder Loop Counter
+57502,Camden Valley Way,"Camden Valley Way, East of Argyle Street",Arterial Road,Camden,-34.054153,150.707245,0,Trafficorder Loop Counter
+57503,Camden Valley Way,"Camden Valley Way, West of Heath Road",Arterial Road,Camden,-33.976528,150.808868,0,Trafficorder Loop Counter
+57518,Great Western Highway,"Great Western Highway, East of Bridge Street",Primary Road,Penrith,-33.769199,150.761856,0,Trafficorder Dual Tube Classifier
+57522,Parker Street,"Parker Street, South of Cox Avenue",Arterial Road,Penrith,-33.756058,150.712326,0,Trafficorder Dual Tube Classifier
+57535,Great Western Highway,"Great Western Highway, West of High Street",Arterial Road,Penrith,-33.746132,150.681915,1,Excel Ll
+57537,Western Motorway,"Western Motorway, North of Loftus Street",Motorway,Penrith,-33.770508,150.667374,0,Trafficorder Loop Counter
+57555,Bridge Street,"Bridge Street, North of Court Street",Arterial Road,Hawkesbury,-33.605782,150.824585,0,Trafficorder Loop Counter
+58654,Great Western Highway,"Great Western Highway, East of Steele Street",Primary Road,Parramatta,-33.818405,150.994781,1,Tirtl
+58690,The Boulevarde,"The Boulevarde, South of Strathfield Avenue",Local Road,Strathfield,-33.877594,151.093262,1,Tirtl
+58847,Great Western Highway,"Great Western Highway, West of Bellevue Road",Primary Road,Blue Mountains,-33.706028,150.527969,0,Trafficorder Loop Counter
+58870,Pacific Motorway,"Pacific Motorway, North of Curtin Avenue",Motorway,Ku-Ring-Gai,-33.694206,151.121323,1,Tirtl
+58871,Pacific Motorway,"Pacific Motorway, West of Belair Place",Motorway,Hornsby,-33.651676,151.137741,1,Tirtl
+58872,Pacific Motorway,"Pacific Motorway, West of Peat Street",Motorway,Hornsby,-33.560299,151.192551,1,Tirtl
+58873,Pacific Motorway,"Pacific Motorway, North of Cheero Point Road",Motorway,Gosford,-33.496265,151.187408,1,Tirtl
+58874,Pacific Motorway,"Pacific Motorway, West of Peats Ridge Road",Motorway,Gosford,-33.429348,151.22467,1,Tirtl
+58884,Pacific Motorway,"Pacific Motorway, East of Pacific Highway",Motorway,Gosford,-33.454262,151.206589,0,Tirtl
+58892,Sydney Harbour Bridge,"Sydney Harbour Bridge, North of Hickson Road",Motorway,North Sydney,-33.852295,151.210846,1,Tirtl
+58893,Warringah Freeway,"Warringah Freeway, West of Sydney Harbour Tunnel",Motorway,North Sydney,-33.841621,151.210663,1,Tirtl
+15154104,Lane Cove Road,"Lane Cove Road, South of Coxs Road",Arterial Road,Ryde,-33.793304,151.119659,1,Tirtl
+15252028,Silverwater Road,"Silverwater Road, South of Western Motorway",Arterial Road,Auburn,-33.843338,151.043411,1,Tirtl
+15252030,Canterbury Road,"Canterbury Road, East of King Georges Road",Arterial Road,Canterbury,-33.929409,151.072479,1,Tirtl
+15252035,Great Western Highway,"Great Western Highway, West of Carlisle Avenue",Primary Road,Blacktown,-33.779202,150.814102,1,Tirtl
+15286001,South Dowling Street,"South Dowling Street, South of Eastern Distributor",Arterial Road,Sydney,-33.886032,151.218079,1,Tirtl
+15286002,Kingsway,"Kingsway, West of Port Hacking Road",Arterial Road,Sutherland,-34.035271,151.113007,1,Tirtl
+15286003,Princes Highway,"Princes Highway, South of The Seven Ways",Primary Road,Rockdale,-33.953056,151.137482,1,Tirtl
+15286006,Newbridge Road,"Newbridge Road, West of Henry Lawson Drive",Arterial Road,Bankstown,-33.9294929504395,150.980163574219,1,Tirtl
+15286007,Showground Road,"Showground Road, East of Victoria Avenue",Arterial Road,The Hills,-33.724922,150.977127,1,Tirtl
+15286008,Olympic Drive,"Olympic Drive, South of Vaughan Street",Arterial Road,Auburn,-33.8651123046875,151.041610717773,1,Tirtl
+15286009,Cambridge Street,"Cambridge Street, North of Joseph Street",Primary Road,Fairfield,-33.888157,150.922974,1,Tirtl
+15286010,Pennant Hills Road,"Pennant Hills Road, East of Beecroft Road",Primary Road,Hornsby,-33.740406,151.060989,1,Tirtl
+15286011,Kingsway,"Kingsway, East of Gannons Road",Arterial Road,Sutherland,-34.045811,151.133041,1,Tirtl
+15286012,Victoria Road,"Victoria Road, North of Evans Street",Motorway,Leichhardt,-33.865181,151.171997,1,Tirtl
+15286013,Great Western Highway,"Great Western Highway, West of Station Street",Primary Road,Holroyd,-33.81562,150.969238,1,Tirtl
+15286014,Great Western Highway,"Great Western Highway, East of Reservoir Road",Primary Road,Blacktown,-33.798195,150.897125,1,Tirtl
+15334001,Stacey Street,"Stacey Street, South of Hume Highway",Arterial Road,Bankstown,-33.906151,151.040207,1,Tirtl
+15334002,City-West Link Road,"City-West Link Road, East of James Street",Arterial Road,Leichhardt,-33.874916,151.155319,1,Tirtl
+15334003,Edgar Street,"Edgar Street, North of Marion Street",Distributor Road,Bankstown,-33.916008,151.014008,1,Tirtl
+15334004,Georges River Road,"Georges River Road, West of Croydon Avenue",Arterial Road,Burwood,-33.894714,151.110962,1,Tirtl
+15334006,Pittwater Road,"Pittwater Road, South of Devitt Street",Arterial Road,Warringah,-33.719955,151.298111,1,Tirtl
+15334014,Galston Road,"Galston Road, West of Montview Parade",Arterial Road,Hornsby,-33.665455,151.090271,1,Tirtl
+15334016,Victoria Road,"Victoria Road, West of Burns Bay Road",Arterial Road,Hunters Hill,-33.838615,151.143753,1,Tirtl
+15334029,Galston Road,"Galston Road, West of Calderwood Road",Arterial Road,Hornsby,-33.654926,151.060974,1,Tirtl
+15334030,Galston Road,"Galston Road, East of Calderwood Road",Arterial Road,Hornsby,-33.65556,151.063828,1,Tirtl
+15334031,Galston Road,"Galston Road, South of Clarinda Street",Arterial Road,Hornsby,-33.689632,151.097748,1,Tirtl
+15370001,New South Head Road,"New South Head Road, East of Mclachlan Avenue",Arterial Road,Sydney,-33.876884,151.228683,1,Tirtl
+15648001,Jersey Road,"Jersey Road, North of Old Prospect Road",Local Road,Holroyd,-33.817272,150.962784,1,Tirtl
+15648002,The Boulevarde,"The Boulevarde, North of Torrington Road",Local Road,Strathfield,-33.877975,151.093185,1,Tirtl
+15828001,Ryde Road,"Ryde Road, South of Lady Game Drive",Arterial Road,Ku-Ring-Gai,-33.772957,151.135391,1,Tirtl
+15828005,Pennant Hills Road,"Pennant Hills Road, East of Masons Drive",Primary Road,The Hills,-33.79353,151.018829,1,Tirtl
+15934002,Pacific Motorway,"Pacific Motorway, East of Pacific Highway",Motorway,Gosford,-33.455235,151.205383,1,Tirtl
+16294002,Pacific Motorway,"Pacific Motorway, East of Pacific Highway",Motorway,Gosford,-33.455536,151.205093,1,Tirtl
+16294003,Pacific Motorway,"Pacific Motorway, East of Pacific Highway",Motorway,Gosford,-33.454796,151.205872,1,Tirtl
+17126149,South Dowling Street,"South Dowling Street, South of Fitzroy Street",Arterial Road,Sydney,-33.886311,151.217911,1,Tirtl
+23058001,M2 Motorway,"M2 Motorway, East of Cropley Drive",Motorway,,-33.770721,150.986466,1,Tirtl
+23571159,George Street,"George Street, North of Little Regent Street",Arterial Road,,-33.883911,151.202667,0,Trafficorder Loop Counter
+99990003,Hawkesbury Road,"Hawkesbury Road, East of Great Western Highway",Distributor Road,Holroyd,-33.817974,150.981827,1,Tirtl
+99990004,Pages Road,"Pages Road, North of Great Western Highway",Distributor Road,Penrith,-33.769588,150.768738,1,Tirtl
+99990010,Victoria Road,"Victoria Road, East of Cressy Road",Arterial Road,Ryde,-33.819687,151.117416,1,Tirtl
+99990011,Broughton Street,"Broughton Street, North of Moore Street",Distributor Road,Campbelltown,-34.066612,150.81958,1,Tirtl
+99990013,Kingsway,"Kingsway, South of Sylvania Road",Arterial Road,Sutherland,-34.033203,151.092529,1,Tirtl
+99990014,Pacific Motorway,"Pacific Motorway, East of Pacific Highway",Motorway,Gosford,-33.454525,151.206726,1,Tirtl
