@@ -9,6 +9,22 @@ Downloads, cleans, and explores **NSW traffic volume data**, then aligns it with
 
 ---
 
+## 🔑 Before You Start: API Key Required
+
+**`fetch_traffic_data.py` requires a NSW Open Data API key.** The embedded key may expire — you should get your own:
+
+1. Go to https://opendata.transport.nsw.gov.au/ and register an account
+2. Navigate to your account dashboard and create an API key
+3. Open `fetch_traffic_data.py` and replace the value of `API_KEY` (line 19):
+
+```python
+API_KEY = "your-new-api-key-here"
+```
+
+Without a valid key, step 1 will fail with a `401` error. Steps 2 (`align_crash_data.py`) and 3 (`read_data.py`) do not require an API key, but they depend on the files generated in step 1.
+
+---
+
 ## ⚠️ Read This First: Execution Order & Final Output
 
 **The scripts must be run in order.** Each step depends on the previous one:
