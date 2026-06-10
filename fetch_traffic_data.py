@@ -16,7 +16,7 @@ import os
 from io import StringIO
 from datetime import datetime
 
-API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxeGRRcTZxd3hyUHB2dWFtaUJDWlJZYU85dDJKdzRlcmJOUXpBU054QmZFIiwiaWF0IjoxNzgxMDEyNzA5fQ.4oVqr7Rdt4cOEsLZ4wL7aJ-Owp1eemcwPYuDSbN57Ew"
+API_KEY = "use your API key here"
 BASE_URL = "https://api.transport.nsw.gov.au/v1/traffic_volume"
 HEADERS = {"Authorization": f"apikey {API_KEY}"}
 OUTPUT_DIR = "data"
