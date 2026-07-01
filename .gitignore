@@ -1,6 +1,7 @@
-# Large data files (>100MB — exceed GitHub file size limit)
-data/traffic_hourly_sydney_2019.csv
-data/traffic_hourly_sydney_2019_aligned.csv
+# Large traffic data files (>100MB — exceed GitHub file size limit)
+# Raw and aligned hourly CSVs are excluded; sample files (*_sample_10k.csv) are kept
+data/traffic_hourly_sydney_2[0-9][0-9][0-9].csv
+data/traffic_hourly_sydney_2[0-9][0-9][0-9]_aligned.csv
 
 # Python artifacts
 __pycache__/

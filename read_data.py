@@ -18,14 +18,18 @@ import os
 import sys
 
 DATA_DIR = "data"
+DEFAULT_YEAR = 2022
 
 # --- files ---
-FILES = {
-    "stations":   os.path.join(DATA_DIR, "stations_sydney.csv"),
-    "traffic":    os.path.join(DATA_DIR, "traffic_hourly_sydney_2019.csv"),
-    "aligned":    os.path.join(DATA_DIR, "traffic_hourly_sydney_2019_aligned.csv"),
-    "yearly":     os.path.join(DATA_DIR, "yearly_summary_sydney_2019.csv"),
-}
+def get_files(year):
+    return {
+        "stations":   os.path.join(DATA_DIR, "stations_sydney.csv"),
+        "traffic":    os.path.join(DATA_DIR, f"traffic_hourly_sydney_{year}.csv"),
+        "aligned":    os.path.join(DATA_DIR, f"traffic_hourly_sydney_{year}_aligned.csv"),
+        "yearly":     os.path.join(DATA_DIR, f"yearly_summary_sydney_{year}.csv"),
+    }
+
+FILES = get_files(DEFAULT_YEAR)
 
 
 def load(name: str) -> pd.DataFrame:
@@ -65,7 +69,7 @@ def cmd_station(key: int):
                               "public_holiday", "school_holiday", "daily_total"])
     df = df[df["station_key"] == key]
     if df.empty:
-        print(f"\nStation {key} has no 2019 data")
+        print(f"\nStation {key} has no data")
         return
 
     print(f"\n=== Data Overview ({len(df):,} rows) ===")
@@ -203,7 +207,9 @@ def cmd_overview():
             df = pd.read_csv(path, nrows=5)
             print(f"  columns ({len(df.columns)}): {', '.join(df.columns)}")
             ncols = len(df.columns)
-            print(f"  shape (full): 2,528,481 x {ncols}")
+            # quick row count (without loading all data)
+            nrows = sum(1 for _ in open(path, encoding='utf-8')) - 1
+            print(f"  shape (full): {nrows:,} x {ncols}")
         else:
             df = pd.read_csv(path)
             print(f"  rows: {len(df):,}  cols: {len(df.columns)}")
@@ -223,20 +229,29 @@ def cmd_overview():
 # ============================================================
 HELP_TEXT = """
 Usage:
-  python read_data_en.py                 overview
-  python read_data_en.py head            first 20 rows of long table
-  python read_data_en.py station <key>   station details (e.g. 55304)
-  python read_data_en.py daily <key>     daily volume trend
-  python read_data_en.py holiday         holiday vs normal comparison
-  python read_data_en.py peak            peak period analysis
-  python read_data_en.py lga <name>      filter by LGA (e.g. Sydney)
-  python read_data_en.py road <type>     filter by road class (e.g. Motorway)
-  python read_data_en.py crash           crash feature statistics
+  python read_data_en.py [--year <YYYY>]                overview
+  python read_data_en.py [--year <YYYY>] head            first 20 rows of long table
+  python read_data_en.py [--year <YYYY>] station <key>   station details (e.g. 55304)
+  python read_data_en.py [--year <YYYY>] daily <key>     daily volume trend
+  python read_data_en.py [--year <YYYY>] holiday         holiday vs normal comparison
+  python read_data_en.py [--year <YYYY>] peak            peak period analysis
+  python read_data_en.py [--year <YYYY>] lga <name>      filter by LGA (e.g. Sydney)
+  python read_data_en.py [--year <YYYY>] road <type>     filter by road class (e.g. Motorway)
+  python read_data_en.py [--year <YYYY>] crash           crash feature statistics
+
+Default year: 2022
 """
 
 
 if __name__ == "__main__":
     args = sys.argv[1:]
+
+    # parse --year / -y argument
+    if len(args) >= 2 and args[0] in ("--year", "-y"):
+        YEAR = int(args[1])
+        FILES = get_files(YEAR)
+        args = args[2:]
+
     if not args:
         cmd_overview()
     elif args[0] == "head":

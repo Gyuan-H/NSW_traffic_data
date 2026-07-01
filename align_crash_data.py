@@ -9,8 +9,8 @@ Method:
   Space: each crash -> traffic stations within 5km radius
 
 Output:
-  data/traffic_hourly_sydney_2019_aligned.csv  -- traffic data with 5 crash columns appended
-  data/crash_alignment_stats.csv               -- alignment summary statistics
+  data/traffic_hourly_sydney_{YEAR}_aligned.csv  -- traffic data with 5 crash columns appended
+  data/crash_alignment_stats_{YEAR}.csv          -- alignment summary statistics (per year)
 """
 
 import pandas as pd
@@ -24,10 +24,9 @@ import time
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 DATA = "data"
-CRASH_FILE = os.path.join(DATA, "nsw_road_crash_data_2019-2023_crash.xlsx")
-TRAFFIC_FILE = os.path.join(DATA, "traffic_hourly_sydney_2019.csv")
+CRASH_FILE = os.path.join(DATA, "nsw_road_crash_data_2020-2024_crash.xlsx")
 STATIONS_FILE = os.path.join(DATA, "stations_sydney.csv")
-ALIGNED_FILE = os.path.join(DATA, "traffic_hourly_sydney_2019_aligned.csv")
+YEARS = [2022, 2023, 2024]
 
 RADIUS_KM = 5.0  # crash influence radius
 
@@ -47,8 +46,8 @@ def load_crashes() -> pd.DataFrame:
         "No. moderately injured", "No. minor-other injured",
     ]
     df = pd.read_excel(CRASH_FILE, usecols=cols)
-    df = df[df["Year of crash"] == 2019].copy()
-    print(f"  {len(df):,} crashes in 2019")
+    df = df[df["Year of crash"].isin(YEARS)].copy()
+    print(f"  {len(df):,} crashes in {YEARS}")
 
     # -- time mapping --
     month_map = {
@@ -195,13 +194,13 @@ def aggregate_crashes(joined: pd.DataFrame) -> pd.DataFrame:
 # ============================================================
 # 5. Merge to traffic data
 # ============================================================
-def merge_to_traffic(crash_agg: pd.DataFrame):
+def merge_to_traffic(crash_agg: pd.DataFrame, traffic_file: str, aligned_file: str):
     print(f"\n[4/5] Merging crash features into traffic data...")
     t0 = time.time()
 
     # load traffic
     print("  Loading traffic CSV (large file)...")
-    traffic = pd.read_csv(TRAFFIC_FILE)
+    traffic = pd.read_csv(traffic_file)
     print(f"  {len(traffic):,} rows, {len(traffic.columns)} cols")
 
     before_cols = len(traffic.columns)
@@ -225,9 +224,9 @@ def merge_to_traffic(crash_agg: pd.DataFrame):
 
     # -- save aligned file --
     print(f"\n[5/5] Saving aligned file...")
-    traffic.to_csv(ALIGNED_FILE, index=False)
-    mb = os.path.getsize(ALIGNED_FILE) / 1024 / 1024
-    print(f"  [OK] {ALIGNED_FILE} ({mb:.1f} MB)")
+    traffic.to_csv(aligned_file, index=False)
+    mb = os.path.getsize(aligned_file) / 1024 / 1024
+    print(f"  [OK] {aligned_file} ({mb:.1f} MB)")
 
     # -- stats --
     print(f"\n=== Crash Feature Stats ===")
@@ -236,14 +235,15 @@ def merge_to_traffic(crash_agg: pd.DataFrame):
         print(f"  {c}: mean={traffic[c].mean():.3f}, "
               f"max={traffic[c].max()}, nonzero={nonzero:,} ({nonzero/len(traffic):.2%})")
 
-    # save alignment stats
+    # save alignment stats (per-year)
+    stats_file = aligned_file.replace("_aligned.csv", "_crash_stats.csv")
     stats = pd.DataFrame({
         "feature": crash_cols,
         "mean": [traffic[c].mean() for c in crash_cols],
         "max": [traffic[c].max() for c in crash_cols],
         "nonzero_pct": [(traffic[c] > 0).mean() for c in crash_cols],
     })
-    stats.to_csv(os.path.join(DATA, "crash_alignment_stats.csv"), index=False)
+    stats.to_csv(stats_file, index=False)
 
     return traffic
 
@@ -253,6 +253,7 @@ def main():
     print("=" * 60)
     print("Crash <-> Traffic Alignment")
     print(f"  Radius: {RADIUS_KM} km")
+    print(f"  Years: {YEARS}")
     print("=" * 60)
 
     crashes = load_crashes()
@@ -265,10 +266,17 @@ def main():
         return
 
     crash_agg = aggregate_crashes(joined)
-    merge_to_traffic(crash_agg)
+
+    for YEAR in YEARS:
+        print(f"\n{'='*60}")
+        print(f"--- Year {YEAR} ---")
+        print(f"{'='*60}")
+        traffic_file = os.path.join(DATA, f"traffic_hourly_sydney_{YEAR}.csv")
+        aligned_file = os.path.join(DATA, f"traffic_hourly_sydney_{YEAR}_aligned.csv")
+        merge_to_traffic(crash_agg, traffic_file, aligned_file)
 
     print("\n" + "=" * 60)
-    print("Done. Crash features saved to traffic_hourly_sydney_2019_aligned.csv")
+    print("Done. Crash features saved to traffic_hourly_sydney_{2022,2023,2024}_aligned.csv")
     print("=" * 60)
 
 
