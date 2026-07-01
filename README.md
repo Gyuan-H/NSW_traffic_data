@@ -9,7 +9,24 @@ Downloads, cleans, and explores **NSW traffic volume data**, then aligns it with
 
 ---
 
-## 🔑 Before You Start: API Key Required
+## 🔑 Before You Start: Requirements & API Key
+
+### Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Requires Python 3.8+ and the following packages:
+
+| Package | Used By | Purpose |
+|---------|---------|---------|
+| `pandas` | all scripts | Data loading, transformation, CSV I/O |
+| `numpy` | `align_crash_data.py` | Vectorized Haversine distance computation |
+| `requests` | `fetch_traffic_data.py` | NSW Traffic Volume API HTTP calls |
+| `openpyxl` | `align_crash_data.py` | Reading the crash `.xlsx` file |
+
+### API Key
 
 **`fetch_traffic_data.py` requires a NSW Open Data API key.** The embedded key may expire — you should get your own:
 
