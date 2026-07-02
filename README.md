@@ -82,6 +82,8 @@ The raw files `traffic_hourly_sydney_{year}.csv` (14 columns, no crash features)
 
 > 💡 **Preview without running**: A 10k-row sample is included in the repo at `data/traffic_hourly_sydney_2022_aligned_sample_10k.csv` so you can inspect the schema immediately after cloning.
 
+For the detailed data dictionary and field-level notes, see `data/DATA_DICTIONARY.md`.
+
 ---
 
 ## Project Structure
