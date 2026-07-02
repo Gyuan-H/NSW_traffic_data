@@ -194,6 +194,41 @@ def aggregate_crashes(joined: pd.DataFrame) -> pd.DataFrame:
 # ============================================================
 # 5. Merge to traffic data
 # ============================================================
+def merge_duplicate_traffic_rows(traffic: pd.DataFrame) -> pd.DataFrame:
+    """
+    Collapse duplicated detector rows for the same station/date/hour.
+    Multiple rows can represent separate traffic streams for one station; add
+    their hourly volume and daily total before attaching crash features.
+    """
+    sum_cols = ["daily_total", "volume"]
+    group_cols = [c for c in traffic.columns if c not in sum_cols]
+
+    dup_mask = traffic.duplicated(subset=group_cols, keep=False)
+    dup_rows = int(dup_mask.sum())
+    if dup_rows == 0:
+        print("  No duplicate traffic rows found")
+        return traffic
+
+    before_rows = len(traffic)
+    traffic = (
+        traffic.groupby(group_cols, as_index=False, dropna=False)[sum_cols]
+        .sum()
+    )
+
+    ordered_cols = [c for c in group_cols if c in traffic.columns]
+    for c in sum_cols:
+        if c in traffic.columns:
+            insert_at = 6 if c == "daily_total" else 7
+            ordered_cols.insert(min(insert_at, len(ordered_cols)), c)
+    traffic = traffic[[c for c in ordered_cols if c in traffic.columns]]
+
+    print(
+        f"  Merged duplicate traffic rows: {before_rows:,} -> {len(traffic):,} "
+        f"(collapsed {before_rows - len(traffic):,} rows)"
+    )
+    return traffic
+
+
 def merge_to_traffic(crash_agg: pd.DataFrame, traffic_file: str, aligned_file: str):
     print(f"\n[4/5] Merging crash features into traffic data...")
     t0 = time.time()
@@ -202,6 +237,7 @@ def merge_to_traffic(crash_agg: pd.DataFrame, traffic_file: str, aligned_file: s
     print("  Loading traffic CSV (large file)...")
     traffic = pd.read_csv(traffic_file)
     print(f"  {len(traffic):,} rows, {len(traffic.columns)} cols")
+    traffic = merge_duplicate_traffic_rows(traffic)
 
     before_cols = len(traffic.columns)
 

@@ -70,13 +70,13 @@ data/traffic_hourly_sydney_2023_aligned.csv
 data/traffic_hourly_sydney_2024_aligned.csv
 ```
 
-Three years of hourly traffic volume (14 original columns + 5 crash context columns = 19 columns each), produced after running both `fetch_traffic_data.py` and `align_crash_data.py`.
+Three years of hourly traffic volume (14 original columns + 5 crash context columns = 19 columns each), produced after running both `fetch_traffic_data.py` and `align_crash_data.py`. During alignment, duplicate multi-stream traffic records for the same `(station_key, date, hour)` are collapsed by summing `volume` and `daily_total`, so the final aligned files contain one row per station-date-hour.
 
 | Year | Rows | Active Stations |
 |------|------|-----------------|
-| 2022 | ~1,231,000 | 112 |
-| 2023 | ~1,282,000 | 80 |
-| 2024 | ~1,202,000 | 71 |
+| 2022 | 524,515 | 112 |
+| 2023 | 505,102 | 84 |
+| 2024 | 441,146 | 72 |
 
 The raw files `traffic_hourly_sydney_{year}.csv` (14 columns, no crash features) are intermediate products — use them only if you explicitly don't want crash context.
 
@@ -148,7 +148,11 @@ The crash dataset only provides **month + day of week + 2-hour window** — the 
    - `crash_injury_sum` — total persons injured or killed
    - `crash_fatal_count` — number of fatal crashes
    - `crash_wet_count` — number of wet-surface crashes
-5. **Left join** (per year) → Left-joins the aggregated crash features onto each year's raw traffic table. Rows with no matching crash are zero-filled. Outputs `traffic_hourly_sydney_{year}_aligned.csv`. Also saves per-year crash feature statistics to `traffic_hourly_sydney_{year}_crash_stats.csv`.
+5. **Traffic merge + left join** (per year) → Collapses duplicate multi-stream traffic rows by `(station_key, date, hour)`, summing `volume` and `daily_total`, then left-joins the aggregated crash features onto the merged traffic table. Rows with no matching crash are zero-filled. Outputs `traffic_hourly_sydney_{year}_aligned.csv`. Also saves per-year crash feature statistics to `traffic_hourly_sydney_{year}_crash_stats.csv`.
+
+**Traffic multi-stream merge**:
+
+Some stations report multiple traffic streams for the same `(station_key, date, hour)` (for example, separate lanes or directions). Before crash features are attached, `align_crash_data.py` collapses these rows into one station-date-hour row by summing `volume` and `daily_total`; station metadata and calendar fields are kept unchanged.
 
 **Usage**:
 
@@ -219,11 +223,11 @@ python align_crash_data.py
 
 | Property | 2022 | 2023 | 2024 |
 |----------|------|------|------|
-| Rows | ~1,231,000 | ~1,282,000 | ~1,202,000 |
+| Rows | 1,231,118 | 1,282,414 | 1,202,299 |
 | Columns | 14 | 14 | 14 |
-| File size | ~175 MB | ~183 MB | ~171 MB |
-| Format | **Long format** (one row = one station × one date × one hour) |
-| Active stations | 112 | 80 | 71 |
+| File size | ~175.1 MB | ~182.5 MB | ~170.6 MB |
+| Format | **Long format** (one row = one station × one date × one hour × one reported traffic stream) |
+| Active stations | 112 | 84 | 72 |
 
 #### Temporal Columns
 
@@ -242,6 +246,8 @@ python align_crash_data.py
 | `daily_total` | int | **Daily total volume (veh/day)** — repeated across all 24 hours of the same day |
 
 > ⚠️ `volume` is heavily right-skewed: the median is roughly half the mean. Most hours carry moderate traffic; a small number of peak hours reach very high volumes.
+
+> Note: Raw hourly files can contain multiple rows for the same `(station_key, date, hour)` when the API reports separate traffic streams for one station. These raw rows are intentionally preserved. The aligned modeling files merge them by summing `volume` and `daily_total`.
 
 #### Built-in Context Labels
 
@@ -267,7 +273,14 @@ python align_crash_data.py
 
 ### 📄 `traffic_hourly_sydney_{year}_aligned.csv` — Hourly Traffic with Crash Features
 
-Same row counts as the raw files above, with **19 columns** (14 original + 5 crash features). This is the final modeling-ready dataset.
+Merged to one row per `(station_key, date, hour)`, with **19 columns** (14 original traffic columns + 5 crash features). This is the final modeling-ready dataset.
+
+Before crash features are joined, `align_crash_data.py` combines multi-stream traffic rows at the same station-date-hour by summing:
+
+- `volume`: total hourly traffic volume across all reported streams
+- `daily_total`: total daily traffic volume across all reported streams
+
+All other traffic metadata fields (`full_name`, `road_functional_hierarchy`, `lga`, `latitude`, `longitude`, calendar labels, etc.) are retained from the shared station/date/hour record.
 
 #### Crash Context Features (Columns 15–19)
 
@@ -295,7 +308,7 @@ One row = one station × one direction × one vehicle class × one period.
 
 | Column | Type | Description | Values |
 |--------|------|-------------|--------|
-| `station_key` | int | Foreign key to `stations` | 71–112 stations per year |
+| `station_key` | int | Foreign key to `stations` | 71-112 stations per year |
 | `station_id` | str | Internal NSW road management ID | `"1003"` |
 | `traffic_direction_name` | str | Direction reporting type | `PRESCRIBED` (forward), `COUNTER` (reverse), `PRESCRIBED AND COUNTER` (both) |
 | `cardinal_direction_name` | str | Cardinal travel direction | `NORTH`, `SOUTH`, `EAST`, `WEST`, `BOTH` |
@@ -307,7 +320,7 @@ One row = one station × one direction × one vehicle class × one period.
 
 | Column | Type | Description | Range |
 |--------|------|-------------|-------|
-| `traffic_count` | int | Average traffic volume for the given dimension combination (AADT or period-specific average) | 3–139,318, median ~9,900 |
+| `traffic_count` | int | Average traffic volume for the given dimension combination (AADT or period-specific average) | 3-139,318, median ~9,900 |
 | `data_availability` | int | Percentage of days with valid data. `-1` = not assessed | -1 to 100, mean ~57% |
 | `data_reliability` | int | Reliability score. `-1` = not assessed | -1 to 100 |
 
